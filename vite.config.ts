@@ -60,10 +60,8 @@ export default ({ mode }: { mode: string }) => {
   const env = loadEnv(mode, process.cwd());
   return defineConfig({
     base: '/', // این خط برای saasagentai.github.io حیاتی است
-    plugins: [
-      react(), 
-      watchDependenciesPlugin()
-    ],
+    // فقط این دو پلاگین کافی است
+    plugins: [react()],
     build: {
       minify: true,
       outDir: 'dist',
