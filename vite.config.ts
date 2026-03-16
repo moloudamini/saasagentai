@@ -105,6 +105,7 @@ function reloadTriggerPlugin() {
 export default ({ mode }: { mode: string }) => {
   const env = loadEnv(mode, process.cwd());
   return defineConfig({
+    base: '/',
     plugins: [react(), cloudflare(), watchDependenciesPlugin(), reloadTriggerPlugin()],
     build: {
       minify: true,
